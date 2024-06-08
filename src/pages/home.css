@@ -1,0 +1,113 @@
+.home {
+    background-color: #d388e7;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    .container {
+      border: 1px solid white;
+      border-radius: 10px;
+      width: 60%;
+      height: 60%;
+      display: flex;
+    }}
+/* 
+
+    .input {
+        height: 40px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+
+      }
+    
+      
+      button {
+        border: none;
+        padding: 10px 15px;
+        color: white;
+        background-color: #b90892e9;
+        cursor: pointer;
+        
+      }
+      input {
+        width: 892px;
+        border: none;
+        outline: none;
+       
+        color: #62005b;
+        font-size: 18px;
+        &::placeholder {
+          color: lightgray;
+        }
+      }
+      .send {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+      } */
+      .messageContent {
+        align-items: flex-end;
+        p {
+          background-color: #8da4f1;
+          color: white;
+          border-radius: 10px 0px 10px 10px;
+        }
+      }
+      
+  .chatroom-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #c89bd2e6;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background-color: #ffffff;
+  }
+  
+  .input-container input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: rgb(73, 10, 75);
+  }
+  
+  .input-container button {
+    padding: 10px;
+    background-color:  #e00ae7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .sign-out {
+    padding: 10px;
+    background-color: #e00ae7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
