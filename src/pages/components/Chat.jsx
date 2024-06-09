@@ -1,5 +1,6 @@
 import React from 'react';
 import '../home.css';
+import { Link } from 'react-router-dom';
 
 const Chat = () => {
   return (
@@ -15,7 +16,9 @@ const Chat = () => {
         />
         <button>Send</button>
       </div>
+      <Link to="/login">
       <button className="sign-out">Sign Out</button>
+      </Link>
     </div>
   );
 };
