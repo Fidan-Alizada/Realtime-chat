@@ -28,7 +28,7 @@ const Register = () => {
       });
 
       await setDoc(doc(db, "userChats", res.user.uid), {});
-      navigate("/"); 
+      navigate("/");  // Redirect to chat after successful registration
     } catch (err) {
       setError(true);
     }
@@ -59,7 +59,7 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button>Sign Up</button>
-          {error && <span>Нou are successfully registered</span>}
+          {error && <span>You are successfully registered</span>}
         </form>
         <p>
           Already have an account? <Link to="/login">Login</Link>
