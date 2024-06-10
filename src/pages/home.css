@@ -65,7 +65,7 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
-    background-color: #c89bd2e6;
+    background-color: #c7a4cfe6;
     color: white;
     border-radius: 10px;
   }
@@ -100,7 +100,10 @@
     border: none;
     cursor: pointer;
     margin-left: 10px;
+
   }
+  
+  
   
   .sign-out {
     padding: 10px;
