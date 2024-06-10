@@ -28,7 +28,7 @@ const Register = () => {
       });
 
       await setDoc(doc(db, "userChats", res.user.uid), {});
-      navigate("/");  // Redirect to chat after successful registration
+      navigate("/"); 
     } catch (err) {
       setError(true);
     }
