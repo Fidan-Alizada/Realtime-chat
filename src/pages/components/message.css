@@ -59,7 +59,7 @@
 
 .send-button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #a22692;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -68,7 +68,7 @@
 }
 
 .send-button:hover {
-  background-color: #0056b3;
+  background-color: #a6129c;
 }
 
 .messages {
