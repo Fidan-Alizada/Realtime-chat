@@ -113,3 +113,18 @@
   font-size: 12px;
   color: blueviolet;
 }
+.messages::-webkit-scrollbar {
+  width: 10px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
