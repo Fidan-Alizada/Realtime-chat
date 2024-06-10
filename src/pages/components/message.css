@@ -70,3 +70,40 @@
 .send-button:hover {
   background-color: #0056b3;
 }
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+
+.message-container {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 70%;
+}
+
+
+.message-container.right {
+  align-self: flex-end;
+
+}
+
+
+.message-container.left {
+  align-self: flex-start;
+
+}
+
+
+.message-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.message-text {
+  margin: 0;
+}

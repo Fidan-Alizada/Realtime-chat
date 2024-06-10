@@ -1,9 +1,8 @@
-// chat.jsx
 import React, { useEffect, useState } from "react";
 import Message from "./message";
 import { ref, onValue, query, orderByChild, limitToLast } from "firebase/database";
 import SendMessage from "./send-message";
-import { db } from "../../firebase";
+import { db, auth } from "../../firebase"; 
 import { Link } from "react-router-dom";
 import "./message.css";
 
@@ -34,7 +33,11 @@ const Chat = () => {
     <div className="chatroom-container">
       <div className="messages">
         {messages.map((message) => (
-          <Message key={message.id} message={message} />
+          <Message 
+            key={message.id} 
+            message={message} 
+            isCurrentUser={message.uid === auth.currentUser.uid} // Pass isCurrentUser prop
+          />
         ))}
       </div>
       <div className="input-container">
