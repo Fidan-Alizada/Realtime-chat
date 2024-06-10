@@ -36,7 +36,7 @@ const Chat = () => {
           <Message 
             key={message.id} 
             message={message} 
-            isCurrentUser={message.uid === auth.currentUser.uid} // Pass isCurrentUser prop
+            isCurrentUser={message.uid === auth.currentUser.uid} 
           />
         ))}
       </div>

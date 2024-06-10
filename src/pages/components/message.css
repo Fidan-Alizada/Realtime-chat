@@ -107,3 +107,9 @@
 .message-text {
   margin: 0;
 }
+
+
+.message-timestamp {
+  font-size: 12px;
+  color: blueviolet;
+}
