@@ -1,31 +1,33 @@
+// chat.jsx
 import React, { useEffect, useState } from "react";
 import Message from "./message";
-import { collection, limit, onSnapshot, orderBy, query } from "firebase/firestore";
+import { ref, onValue, query, orderByChild, limitToLast } from "firebase/database";
 import SendMessage from "./send-message";
-import { db } from '../../firebase';
+import { db } from "../../firebase";
 import { Link } from "react-router-dom";
-import "./message.css"
+import "./message.css";
+
 const Chat = () => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     const messagesQuery = query(
-      collection(db, "messages"),
-      orderBy("createdAt", "desc"),
-      limit(20)
+      ref(db, "messages"),
+      orderByChild("createdAt"),
+      limitToLast(20)
     );
 
-    const unsubscribe = onSnapshot(messagesQuery, (QuerySnapshot) => {
+    const unsubscribe = onValue(messagesQuery, (snapshot) => {
       const fetchedMessages = [];
-      QuerySnapshot.forEach((doc) => {
-        fetchedMessages.push({ ...doc.data(), id: doc.id });
+      snapshot.forEach((childSnapshot) => {
+        fetchedMessages.push({ ...childSnapshot.val(), id: childSnapshot.key });
       });
       const sortedMessages = fetchedMessages.sort(
         (a, b) => a.createdAt - b.createdAt
       );
       setMessages(sortedMessages);
     });
-    return () => unsubscribe;
+    return () => unsubscribe();
   }, []);
 
   return (
@@ -39,7 +41,7 @@ const Chat = () => {
         <SendMessage />
       </div>
       <Link to="/login">
-      <button className="sign-out">Sign Out</button>
+        <button className="sign-out">Sign Out</button>
       </Link>
     </div>
   );

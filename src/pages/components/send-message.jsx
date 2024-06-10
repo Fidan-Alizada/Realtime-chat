@@ -1,4 +1,5 @@
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+
+import { ref, push, serverTimestamp } from "firebase/database";
 import { useState } from "react";
 import { auth, db } from "../../firebase";
 import "./message.css";
@@ -13,7 +14,7 @@ const SendMessage = () => {
       return;
     }
     const { uid, displayName, photoURL } = auth.currentUser;
-    await addDoc(collection(db, "messages"), {
+    await push(ref(db, "messages"), {
       text: message,
       name: displayName,
       avatar: photoURL,
@@ -24,7 +25,7 @@ const SendMessage = () => {
   };
 
   return (
-    <form className="send-message-container" onSubmit={(event) => sendMessage(event)}>
+    <form className="send-message-container" onSubmit={sendMessage}>
       <input
         type="text"
         placeholder="Type your message"
