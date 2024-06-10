@@ -1,9 +1,8 @@
-// message.jsx
 import React from "react";
 import "./message.css";
 
 const Message = ({ message, isCurrentUser }) => {
-  // Conditional rendering based on isCurrentUser prop
+ 
   const messageClass = isCurrentUser ? "message-container right" : "message-container left";
 
   return (
